@@ -1,20 +1,20 @@
 server:
-  port: 8080  # 서버 포트
+  port: 8080
 
 spring:
   datasource:
     driver-class-name: org.postgresql.Driver
-    url: jdbc:postgresql://192.168.1.99:5432/insurai  # DB 이름(원하면 변경)
-    username: postgres   # DB 사용자 이름
-    password: tmshdlwls12       # DB 비밀번호
+    url: jdbc:postgresql://192.168.1.163:5432/insurai   # 상대방 DB 서버 IP
+    username: postgres                             # 상대방 DB 계정
+    password: tmshdlwls12
 
   jpa:
     hibernate:
-      ddl-auto: update   # create/update/validate 옵션 중 update 추천
+      ddl-auto: validate   # ⚠️ 협업 시 update도 위험 → validate 권장
+    show-sql: true
     properties:
       hibernate:
         format_sql: true
-    show-sql: true       # 콘솔에 SQL 출력
 
 logging:
   level:
